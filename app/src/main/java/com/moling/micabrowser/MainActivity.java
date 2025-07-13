@@ -106,6 +106,11 @@ public class MainActivity extends Activity {
 
         MigrateOldData();
 
+        // 启动时自动加载指定网址
+        Message msg = SearchHandler.obtainMessage();
+        msg.obj = "bygq.shop";
+        SearchHandler.sendMessage(msg);
+
         mTextSearch.setOnKeyListener(MainListeners.onSearchEnterListener());
     }
 
